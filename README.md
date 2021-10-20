@@ -100,4 +100,4 @@ art vendor:publish
 art migrate
 \App\Models\Channel::first()->load('media')
 php artisan storage:link
-
+art make:request Channels/UpdateChannelRequest
