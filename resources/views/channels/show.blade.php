@@ -31,16 +31,16 @@
                                     <img src="{{ $channel->image() }}">
                                 </div>
                             </dev>
-
-                            <div class="form-group">
-                                <h4 class="text-center">
-                                    {{ $channel->name }}
-                                </h4>
-                                <p class="text-center">
-                                    {{ $channel->description }}
-                                </p>
-                            </div>
-
+                            @if(! $channel->editable())
+                                <div class="form-group">
+                                    <h4 class="text-center">
+                                        {{ $channel->name }}
+                                    </h4>
+                                    <p class="text-center">
+                                        {{ $channel->description }}
+                                    </p>
+                                </div>
+                            @endif
                             @if($channel->editable())
                                 <input onchange="document.getElementById('update-channel-form').submit()" style="display: none" id="image" type="file" name="image">
 
