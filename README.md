@@ -95,3 +95,9 @@ art make:listener Users/CreateUserChannel
 art migrate:refresh --seed
 art ti>\App\Models\User::all()->load('channel');
 art make:controller ChannelController --resource
+composer require "spatie/laravel-medialibrary:^9.8"
+art vendor:publish
+art migrate
+\App\Models\Channel::first()->load('media')
+php artisan storage:link
+
