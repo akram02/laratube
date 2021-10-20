@@ -91,4 +91,6 @@ art ti
 art make:model Model
 art make:model Channel -m
 art migrate
-
+art make:listener Users/CreateUserChannel
+art migrate:refresh --seed
+art ti>\App\Models\User::all()->load('channel');
