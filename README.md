@@ -62,3 +62,26 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+composer global require laravel/installer
+vim ~/.bashrc
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+composer global require cpriego/valet-linux
+valet install
+valet secure
+
+
+sudo cat /etc/mysql/debian.cnf
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+FLUSH PRIVILEGES;
+
+npm install
+composer require laravel/ui
+php artisan ui vue --auth
+npm install && npm run dev
+sudo apt install php-mysql
+alias art='php artisan'
+art migrate
+art serve
