@@ -94,3 +94,4 @@ art migrate
 art make:listener Users/CreateUserChannel
 art migrate:refresh --seed
 art ti>\App\Models\User::all()->load('channel');
+art make:controller ChannelController --resource
