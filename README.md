@@ -86,3 +86,9 @@ alias art='php artisan'
 art migrate
 art serve
 art migrate:fresh
+art ti
+\App\Models\User::all();
+art make:model Model
+art make:model Channel -m
+art migrate
+
