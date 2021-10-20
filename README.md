@@ -85,3 +85,4 @@ sudo apt install php-mysql
 alias art='php artisan'
 art migrate
 art serve
+art migrate:fresh
