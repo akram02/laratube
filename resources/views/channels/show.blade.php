@@ -31,7 +31,7 @@
                                     <img src="{{ $channel->image() }}">
                                 </div>
                             </dev>
-                            @if(! $channel->editable())
+{{--                            @if(! $channel->editable())--}}
                                 <div class="form-group">
                                     <h4 class="text-center">
                                         {{ $channel->name }}
@@ -40,14 +40,14 @@
                                         {{ $channel->description }}
                                     </p>
                                     <div class="text-center">
-                                        <subscribe-button :subscriptions="{{ $channel->subscriptions }}" inline-template>
+                                        <subscribe-button :channel="{{ $channel }}" :subscriptions="{{ $channel->subscriptions }}" inline-template>
                                             <button @click="toggleSubscription" class="btn btn-danger">
-                                                Subscribe 7k
+                                                @{{ owner ? '' : subscribed ? 'Unsubscribe': 'Subscribe' }} @{{ subscriptions.length }} @{{ owner ? 'Subscribers': '' }}
                                             </button>
                                         </subscribe-button>
                                     </div>
                                 </div>
-                            @endif
+{{--                            @endif--}}
                             @if($channel->editable())
                                 <input onchange="document.getElementById('update-channel-form').submit()" style="display: none" id="image" type="file" name="image">
 
