@@ -103,3 +103,7 @@ php artisan storage:link
 art make:request Channels/UpdateChannelRequest
 art make:model Subscription -m
 art make:controller SubscriptionController --resource
+art make:factory Subscription
+art make:factory Channel
+art migrate:fresh
+art db:seed
