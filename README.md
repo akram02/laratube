@@ -107,3 +107,4 @@ art make:factory Subscription
 art make:factory Channel
 art migrate:fresh
 art db:seed
+nmp install numeral
