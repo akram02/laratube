@@ -2127,7 +2127,23 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   \*****************************************************/
 /***/ (() => {
 
-Vue.component('subscribe-button', {// logic
+Vue.component('subscribe-button', {
+  props: {
+    subscriptions: {
+      type: Array,
+      request: true,
+      "default": function _default() {
+        return [];
+      }
+    }
+  },
+  methods: {
+    toggleSubscription: function toggleSubscription() {
+      if (!__auth()) {
+        alert('Please login to subscribe.');
+      }
+    }
+  }
 });
 
 /***/ }),

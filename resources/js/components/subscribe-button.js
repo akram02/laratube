@@ -1,3 +1,16 @@
 Vue.component('subscribe-button', {
-    // logic
+    props: {
+        subscriptions: {
+            type: Array,
+            request: true,
+            default: () => []
+        }
+    },
+    methods: {
+        toggleSubscription() {
+            if (!__auth()) {
+                alert('Please login to subscribe.')
+            }
+        }
+    }
 })
