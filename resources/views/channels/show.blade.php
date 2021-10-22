@@ -39,6 +39,13 @@
                                     <p class="text-center">
                                         {{ $channel->description }}
                                     </p>
+                                    <div class="text-center">
+                                        <subscribe-button inline-template>
+                                            <button class="btn btn-danger">
+                                                Subscribe 7k
+                                            </button>
+                                        </subscribe-button>
+                                    </div>
                                 </div>
                             @endif
                             @if($channel->editable())
