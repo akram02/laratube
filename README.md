@@ -108,3 +108,4 @@ art make:factory Channel
 art migrate:fresh
 art db:seed
 nmp install numeral
+art make:controller UploadVideoController
