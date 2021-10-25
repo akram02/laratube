@@ -109,3 +109,10 @@ art migrate:fresh
 art db:seed
 nmp install numeral
 art make:controller UploadVideoController
+composer require pbmedia/laravel-ffmpeg
+art make:job Videos/ConvertForStreaming
+art queue:table
+art migrate
+art migrate:fresh --seed
+art queue:work --sleep=0 --timeout 60000
+
