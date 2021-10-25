@@ -3,6 +3,8 @@
 namespace App\Jobs\Videos;
 
 use App\Models\Video;
+use FFMpeg;
+use FFMpeg\Format\Video\X264;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -33,6 +35,16 @@ class ConvertForStreaming implements ShouldQueue
      */
     public function handle()
     {
-        echo 'converted';
+        $low = (new X264())->setKiloBitrate(100);
+        $mid = (new X264())->setKiloBitrate(250);
+        $high = (new X264())->setKiloBitrate(500);
+
+        FFMpeg::fromDisk('local')
+            ->open($this->video->path)
+            ->exportForHLS()
+            ->addFormat($low)
+            ->addFormat($mid)
+            ->addFormat($high)
+            ->save("public/videos/{$this->video->id}/{$this->video->id}.m3u8");
     }
 }

@@ -115,4 +115,4 @@ art queue:table
 art migrate
 art migrate:fresh --seed
 art queue:work --sleep=0 --timeout 60000
-
+art migrate:fresh --seed
