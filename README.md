@@ -118,4 +118,4 @@ art queue:work --sleep=0 --timeout 60000
 art migrate:fresh --seed
 art make:job Videos/CreateVideoThumbnail
 art migrate:fresh --seed
-
+art make:controller VideoController
