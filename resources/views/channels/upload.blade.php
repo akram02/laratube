@@ -30,7 +30,7 @@
                                     <a v-if="video.percentage && video.percentage === 100" target="_blank" :href="`/videos/${video.id}`">
                                         @{{ video.title }}
                                     </a>
-                                    <h4 class="text-center">
+                                    <h4 v-else class="text-center">
                                         @{{ video.title || video.name }}
                                     </h4>
                                 </div>
