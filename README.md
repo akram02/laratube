@@ -119,3 +119,4 @@ art migrate:fresh --seed
 art make:job Videos/CreateVideoThumbnail
 art migrate:fresh --seed
 art make:controller VideoController
+art migrate:fresh --seed
