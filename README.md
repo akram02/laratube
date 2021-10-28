@@ -120,3 +120,4 @@ art make:job Videos/CreateVideoThumbnail
 art migrate:fresh --seed
 art make:controller VideoController
 art migrate:fresh --seed
+npm run watch
