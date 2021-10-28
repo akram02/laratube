@@ -11,6 +11,28 @@
                         <video-js id="video" class="vjs-default-skin" controls preload="auto" width="640" height="268">
                             <source src='{{ asset(Storage::url("videos/{$video->id}/{$video->id}.m3u8")) }}' type="application/x-mpegURL">
                         </video-js>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="mt-3">
+                                    {{ $video->title }}
+                                </h4>
+                                {{ $video->views }} {{ Str::plural('view', $video->views) }}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="d-flex justify-content-between align-items-center mt-5">
+                            <div class="media">
+                                <img class="rounded-circle mr-3" src="https://picsum.photos/id/42/200/200" width="50" height="50" alt="...">
+                                <div class="media-body ml-2">
+                                    <h5 class="mt-0 mb-0">{{ $video->channel->name }}</h5>
+                                    <span class="small">Published on {{ $video->created_at->toFormattedDateString() }}</span>
+                                </div>
+                            </div>
+
+                            <subscribe-button :channel="{{ $video->channel }}" :initial-subscriptions="{{ $video->channel->subscriptions }}" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -24,6 +46,11 @@
 
 @section('scripts')
     <script src='https://vjs.zencdn.net/7.5.4/video.js'></script>
+    <style>
+        .vjs-default-skin {
+            width: 100%;
+        }
+    </style>
     <script>
         window.CURRENT_VIDEO = '{{ $video->id }}'
     </script>
