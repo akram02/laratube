@@ -121,3 +121,8 @@ art migrate:fresh --seed
 art make:controller VideoController
 art migrate:fresh --seed
 npm run watch
+art make:request Videos/UpdateVideoRequest
+art make:model Vote -m
+art migrate
+art migrate:rollback
+art migrate
