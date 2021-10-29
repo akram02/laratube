@@ -1,11 +1,5 @@
 <template>
 <div>
-    <div class="form-inline my-4 w-full">
-        <input type="text" class="form-control form-control-sm w-80">
-        <button class="btn btn-sm btn-primary">
-            <small>Add comment</small>
-        </button>
-    </div>
     <div class="media my-3" v-for="reply in replies.data">
         <a class="mr-3" href="#">
             <avatar :username="reply.user.name" class="mr-3" :size="30"></avatar>
@@ -51,6 +45,15 @@ export default {
                     ]
                 }
             })
+        },
+        addReply(reply) {
+            this.replies = {
+                ...this.replies,
+                data: [
+                    reply,
+                    ...this.replies.data
+                ]
+            }
         }
     }
 }
