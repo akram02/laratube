@@ -127,3 +127,8 @@ art migrate
 art migrate:rollback
 art migrate
 art make:controller VoteController
+art make:model Comment -m -c
+art make:factory Comment
+art make:factory Video
+art migrate:fresh --seed
+npm install vue-avatar

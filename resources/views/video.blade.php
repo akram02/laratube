@@ -63,6 +63,7 @@
                         </form>
                     @endif
                 </div>
+                <comments :video="{{ $video }}"></comments>
             </div>
         </div>
     </div>
@@ -94,6 +95,16 @@
             margin-left: 1rem;
         }
     </style>
+
+    <style>
+        .w-full {
+            width: 100% !important;
+        }
+        .w-80 {
+            width: 80% !important;
+        }
+    </style>
+
     <script>
         window.CURRENT_VIDEO = '{{ $video->id }}'
     </script>
