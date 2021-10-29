@@ -1,6 +1,12 @@
 <template>
     <div class="card mt-5 p-5">
-        <div class="media" v-for="comment in comments.data">
+        <div class="form-inline my-4 w-full">
+            <input type="text" class="form-control form-control-sm w-80">
+            <button class="btn btn-sm btn-primary">
+                <small>Add comment</small>
+            </button>
+        </div>
+        <div class="media my-3" v-for="comment in comments.data">
             <avatar :username="comment.user.name" class="mr-3" :size="30"></avatar>
             <div class="media-body">
                 <h6 class="m5-0">
@@ -9,29 +15,8 @@
                 <small>
                     {{ comment.body }}
                 </small>
-                <div class="form-inline my-4 w-full">
-                    <input type="text" class="form-control form-control-sm w-80">
-                    <button class="btn btn-sm btn-primary">
-                        <small>Add comment</small>
-                    </button>
-                </div>
 
-                <div class="media mt-3">
-                    <a class="mr-3" href="#">
-                        <img width="30" height="30" class="rounded-circle mr-3" src="https://picusm.photos/id/42/200/200">
-                    </a>
-                    <div class="media-body">
-                        <h6 class="mt-0">Media heading</h6>
-                        <small>Cras dfg dfgh lsdj esljfg jlsdf l;sdlfkj ldkfjgl jlsdhl kjsldfh l;sjfl;ah klp;sdhf;l jhslfjl;sfj</small>
-
-                        <div class="form-inline my-4 w-full">
-                            <input type="text" class="form-control form-control-sm w-80">
-                            <button class="btn btn-sm btn-primary">
-                                <small>Add Comment</small>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <replies :comment="comment"></replies>
             </div>
         </div>
         <div class="text-center">
@@ -45,12 +30,14 @@
 
 <script>
 import Avatar from 'vue-avatar'
+import Replies from './replies'
 export default {
     props: [
         'video'
     ],
     components: {
-        Avatar
+        Avatar,
+        Replies
     },
     mounted() {
         this.fetchComments()

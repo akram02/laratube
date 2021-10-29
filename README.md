@@ -132,3 +132,4 @@ art make:factory Comment
 art make:factory Video
 art migrate:fresh --seed
 npm install vue-avatar
+art ti ->  \App\Models\Comment::factory(50)->create([ 'comment_id' => 'd4d30e28-797c-44f3-b00c-29eeaa55defa']);
