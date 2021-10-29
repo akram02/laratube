@@ -126,3 +126,4 @@ art make:model Vote -m
 art migrate
 art migrate:rollback
 art migrate
+art make:controller VoteController

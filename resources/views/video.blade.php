@@ -28,6 +28,8 @@
                                     </h4>
                                     {{ $video->views }} {{ Str::plural('view', $video->views) }}
                                 </div>
+
+                                <votes :default_votes='{{ $video->votes }}' entity_id="{{ $video->id }}" entity_owner="{{ $video->channel->user_id }}"></votes>
                             </div>
 
                             <hr>
@@ -75,6 +77,21 @@
     <style>
         .vjs-default-skin {
             width: 100%;
+        }
+
+        .thumbs-up, .thumbs-down {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            fill: currentColor;
+        }
+
+        .thumbs-down-active, .thumbs-up-active {
+            color: #3EA6FF;
+        }
+
+        .thumbs-down {
+            margin-left: 1rem;
         }
     </style>
     <script>
