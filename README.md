@@ -65,71 +65,136 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 composer global require laravel/installer
+
 vim ~/.bashrc
+
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
+
 composer global require cpriego/valet-linux
+
 valet install
+
 valet secure
 
 
+
 sudo cat /etc/mysql/debian.cnf
+
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+
 FLUSH PRIVILEGES;
 
+
 npm install
+
 composer require laravel/ui
+
 php artisan ui vue --auth
+
 npm install && npm run dev
+
 sudo apt install php-mysql
+
 alias art='php artisan'
+
 art migrate
+
 art serve
+
 art migrate:fresh
+
 art ti
+
 \App\Models\User::all();
+
 art make:model Model
+
 art make:model Channel -m
+
 art migrate
+
 art make:listener Users/CreateUserChannel
+
 art migrate:refresh --seed
+
 art ti>\App\Models\User::all()->load('channel');
+
 art make:controller ChannelController --resource
+
 composer require "spatie/laravel-medialibrary:^9.8"
+
 art vendor:publish
+
 art migrate
+
 \App\Models\Channel::first()->load('media')
+
 php artisan storage:link
+
 art make:request Channels/UpdateChannelRequest
+
 art make:model Subscription -m
+
 art make:controller SubscriptionController --resource
+
 art make:factory Subscription
+
 art make:factory Channel
+
 art migrate:fresh
+
 art db:seed
+
 nmp install numeral
+
 art make:controller UploadVideoController
+
 composer require pbmedia/laravel-ffmpeg
+
 art make:job Videos/ConvertForStreaming
+
 art queue:table
+
 art migrate
+
 art migrate:fresh --seed
+
 art queue:work --sleep=0 --timeout 60000
+
 art migrate:fresh --seed
+
 art make:job Videos/CreateVideoThumbnail
+
 art migrate:fresh --seed
+
 art make:controller VideoController
+
 art migrate:fresh --seed
+
 npm run watch
+
 art make:request Videos/UpdateVideoRequest
+
 art make:model Vote -m
+
 art migrate
+
 art migrate:rollback
+
 art migrate
+
 art make:controller VoteController
+
 art make:model Comment -m -c
+
 art make:factory Comment
+
 art make:factory Video
+
 art migrate:fresh --seed
+
 npm install vue-avatar
+
 art ti ->  \App\Models\Comment::factory(50)->create([ 'comment_id' => 'd4d30e28-797c-44f3-b00c-29eeaa55defa']);
+
